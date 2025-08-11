@@ -8,10 +8,9 @@
   <meta name="author" content="NANOFARM Team" />
   <title>Plant Leaf Disease Classifier | NANOFARM</title>
   <link rel="icon" type="image/png" href="favicon.png" />
-  
+
   <!-- Embedded CSS -->
   <style>
-    /* General resets */
     * {
       margin: 0;
       padding: 0;
@@ -25,20 +24,14 @@
       line-height: 1.6;
     }
 
-    .container {
-      width: 90%;
-      max-width: 960px;
-      margin: auto;
-      padding: 1rem 0;
-    }
-
-    /* Header */
     header {
       background-color: #ffa336;
       padding: 1rem 0;
     }
 
     .header-content {
+      max-width: 960px;
+      margin: auto;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -54,12 +47,17 @@
       font-size: 1rem;
     }
 
-    /* Main Heading */
+    .container {
+      width: 90%;
+      max-width: 960px;
+      margin: auto;
+      padding: 2rem 0;
+    }
+
     h1 {
       font-size: 2rem;
-      margin: 1.5rem 0 0.5rem;
       text-align: center;
-      color: #333;
+      margin-bottom: 0.5rem;
     }
 
     .subheading {
@@ -70,19 +68,18 @@
       margin-bottom: 2rem;
     }
 
-    /* Upload Box */
     .upload-box {
       background: white;
-      margin-top: 2rem;
       padding: 2rem;
       border-radius: 12px;
       box-shadow: 0 2px 8px rgba(0,0,0,0.1);
       text-align: center;
+      margin-bottom: 3rem;
     }
 
     .upload-box h2 {
-      color: #333;
-      margin-bottom: 0.5rem;
+      color: #222;
+      margin-bottom: 0.25rem;
     }
 
     .formats {
@@ -106,27 +103,36 @@
     .browse-btn {
       background-color: #ffa336;
       border: none;
-      padding: 0.7rem 1.5rem;
+      padding: 0.6rem 1.4rem;
       color: white;
-      font-weight: bold;
+      font-weight: 500;
       border-radius: 6px;
       cursor: pointer;
+      font-size: 1rem;
     }
 
     .browse-btn:hover {
       background-color: #e68e2e;
     }
 
-    /* Tips Section */
     .tips {
-      margin-top: 3rem;
       text-align: center;
+    }
+
+    .tips h3 {
+      margin-bottom: 0.5rem;
+    }
+
+    .tips p {
+      font-size: 0.95rem;
+      color: #444;
+      margin-bottom: 1rem;
     }
 
     .tips ul {
       list-style: none;
       padding: 0;
-      margin-top: 1rem;
+      font-size: 0.95rem;
     }
 
     .tips ul li {
@@ -134,13 +140,17 @@
       color: #555;
     }
 
-    /* Footer */
     footer {
-      margin-top: 4rem;
-      text-align: center;
-      padding: 1rem 0;
       background-color: #f2f2f2;
+      text-align: center;
+      padding: 1rem;
       font-size: 0.9rem;
+      color: #555;
+      margin-top: 2rem;
+    }
+
+    input[type="file"] {
+      display: none;
     }
   </style>
 </head>
@@ -148,20 +158,20 @@
 
   <!-- Header -->
   <header>
-    <div class="container header-content">
-      <img src="nano_form_logo.jpg" alt="NANOFARM Logo" class="logo" />
+    <div class="header-content">
+      <img src="nano_farm_logo.png" alt="NANOFARM Logo" class="logo" />
       <span class="tagline">Smart Farm For Every Home</span>
     </div>
   </header>
 
-  <!-- Main Content -->
+  <!-- Main -->
   <main class="container">
     <h1>Plant Leaf Disease Classifier</h1>
     <p class="subheading">
       Upload a clear image of a tomato or chili plant leaf to get instant AI-powered disease identification and personalized treatment recommendations.
     </p>
 
-    <!-- Upload Box -->
+    <!-- Upload Section -->
     <section class="upload-box">
       <h2>Upload Plant Leaf Image</h2>
       <p class="formats">Supported formats: JPG, PNG, WEBP (Max 10MB)</p>
@@ -169,7 +179,7 @@
         <p>Drag and drop your image here</p>
         <span>or</span>
         <button class="browse-btn" onclick="document.getElementById('fileInput').click()">📁 Browse Files</button>
-        <input type="file" id="fileInput" accept="image/png, image/jpeg, image/webp" style="display: none;" />
+        <input type="file" id="fileInput" accept="image/png, image/jpeg, image/webp" />
       </div>
     </section>
 
@@ -187,18 +197,18 @@
 
   <!-- Footer -->
   <footer>
-    <p>&copy; 2025 NANOFARM. All rights reserved.</p>
+    &copy; 2025 NANOFARM. All rights reserved.
   </footer>
 
-  <!-- Optional: Add basic JS for file selection -->
+  <!-- JS -->
   <script>
     const fileInput = document.getElementById('fileInput');
     fileInput.addEventListener('change', function () {
       if (fileInput.files.length > 0) {
         alert(`You selected: ${fileInput.files[0].name}`);
-        // You can handle the upload or preview here
       }
     });
   </script>
+
 </body>
 </html>
